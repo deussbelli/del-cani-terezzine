@@ -58,6 +58,10 @@ export default function KennelSite({ photos, videos, phone, email }: Props) {
 
   return (
     <main className="relative">
+      <a href="#breed" className="skip-link">
+        {t.nav.breed}
+      </a>
+
       <header className="fixed inset-x-0 top-0 z-50 border-b border-bone/8 bg-obsidian/78 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4 md:h-20 md:px-8">
           <a href="#top" className="flex shrink-0 items-center gap-3">
