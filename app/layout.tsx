@@ -22,10 +22,24 @@ export const metadata: Metadata = {
     'A small Cane Corso Italiano kennel in Ukraine. UKFU-registered, health-tested parents, certified pedigree with every puppy.',
   keywords: ['cane corso', 'cane corso italiano', 'kennel', 'puppies', 'UKFU', 'Ukraine'],
   icons: { icon: '/logo.svg' },
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://delcaniterezzine.com'),
+  alternates: {
+    canonical: '/',
+    languages: { en: '/', uk: '/?lang=uk', ru: '/?lang=ru' },
+  },
   openGraph: {
     title: 'Del Cani Terezzine — Cane Corso Italiano kennel',
     description: 'Few litters, nothing hurried. Certified pedigree with every puppy.',
     type: 'website',
+    locale: 'en',
+    alternateLocale: ['uk', 'ru'],
+    images: [{ url: '/dogs/sentinel.webp', width: 768, height: 1376, alt: 'Cane Corso on the old wall' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Del Cani Terezzine — Cane Corso Italiano kennel',
+    description: 'Few litters, nothing hurried. Certified pedigree with every puppy.',
+    images: ['/dogs/sentinel.webp'],
   },
 }
 
