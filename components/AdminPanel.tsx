@@ -72,6 +72,13 @@ export default function AdminPanel({ configured, missing }: Props) {
           <a href="/" className="text-[0.66rem] uppercase tracking-[0.2em] text-bone/50 hover:text-bronze-bright">
             View site
           </a>
+          <a
+            href="/api/admin/leads"
+            download
+            className="text-[0.66rem] uppercase tracking-[0.2em] text-bone/50 hover:text-bronze-bright"
+          >
+            Export requests
+          </a>
           <button
             type="button"
             onClick={async () => {
