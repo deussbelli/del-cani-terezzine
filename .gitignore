@@ -1,0 +1,23 @@
+node_modules/
+.next/
+out/
+build/
+dist/
+coverage/
+
+.env
+.env.local
+.env.*.local
+
+# Runtime content: leads and anything uploaded through the admin panel.
+data/leads.json
+data/media.json
+public/uploads/*
+!public/uploads/.gitkeep
+
+*.log
+.DS_Store
+Thumbs.db
+next-env.d.ts
+*.tsbuildinfo
+.vercel/
