@@ -12,7 +12,7 @@ export default async function Page() {
       photos={photos}
       videos={videos}
       phone={process.env.NEXT_PUBLIC_KENNEL_PHONE ?? '+38050987626'}
-      email={process.env.NEXT_PUBLIC_KENNEL_EMAIL ?? 'rrrivman@gmail.com'}
+      email={process.env.NEXT_PUBLIC_KENNEL_EMAIL ?? 'hello@delcaniterezzine.org'}
     />
   )
 }
