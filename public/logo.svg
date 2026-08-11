@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Del Cani Terezzine">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#D9B87C"/>
+      <stop offset="1" stop-color="#8C6C38"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0E0F12"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="12.5" fill="none" stroke="url(#b)" stroke-width="1.2" opacity="0.75"/>
+  <path d="M20 44 V21 h8.5 c7 0 11 4.2 11 11.5 S35.5 44 28.5 44 Z M25 39.4 h3.2 c4.3 0 6.6-2.6 6.6-6.9 s-2.3-6.9-6.6-6.9 H25 Z" fill="url(#b)"/>
+  <path d="M41 21 h11 v4.4 h-3.1 V44 h-4.8 V25.4 H41 Z" fill="url(#b)"/>
+</svg>

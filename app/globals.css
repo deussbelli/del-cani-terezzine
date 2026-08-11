@@ -1,0 +1,209 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-obsidian: #08080a;
+  --color-graphite: #121317;
+  --color-slate: #1c1e24;
+  --color-bone: #ece7dd;
+  --color-bronze: #b8955a;
+  --color-bronze-bright: #d9b87c;
+  --color-oxblood: #6b2020;
+
+  --font-display: var(--font-display-loaded), 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --font-sans: var(--font-sans-loaded), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-obsidian);
+  color: var(--color-bone);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-bronze) 42%, transparent);
+  color: #fff;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: -0.018em;
+}
+
+.eyebrow {
+  font-size: 0.66rem;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-bronze) 88%, white);
+}
+
+.rule {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--color-bronze) 36%, transparent) 20%,
+    color-mix(in srgb, var(--color-bronze) 36%, transparent) 80%,
+    transparent
+  );
+}
+
+.glass {
+  background: color-mix(in srgb, var(--color-bone) 4%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-bone) 10%, transparent);
+  backdrop-filter: blur(16px);
+}
+
+.bronze-text {
+  background: linear-gradient(118deg, var(--color-bronze-bright), var(--color-bronze) 48%, #8c6c38);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Horizontal media rails: one row, scrolls sideways, snaps to each frame. */
+.rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 78%;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-inline: 1.25rem;
+  padding-bottom: 0.75rem;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--color-bronze) 45%, transparent) transparent;
+}
+
+.rail > * {
+  scroll-snap-align: center;
+}
+
+.rail::-webkit-scrollbar {
+  height: 6px;
+}
+
+.rail::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-bronze) 45%, transparent);
+  border-radius: 999px;
+}
+
+@media (min-width: 640px) {
+  .rail {
+    grid-auto-columns: 42%;
+    gap: 1rem;
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rail {
+    grid-auto-columns: 26%;
+  }
+}
+
+.field {
+  width: 100%;
+  border-radius: 0.85rem;
+  border: 1px solid color-mix(in srgb, var(--color-bone) 14%, transparent);
+  background: color-mix(in srgb, var(--color-graphite) 80%, transparent);
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  color: var(--color-bone);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field::placeholder {
+  color: color-mix(in srgb, var(--color-bone) 36%, transparent);
+}
+
+.field:focus {
+  outline: none;
+  border-color: color-mix(in srgb, var(--color-bronze) 66%, transparent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-bronze) 14%, transparent);
+}
+
+.field-error {
+  border-color: color-mix(in srgb, #e2837a 62%, transparent);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.95rem 2rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-obsidian);
+  background: linear-gradient(100deg, var(--color-bronze-bright), var(--color-bronze));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+.btn-primary:disabled {
+  opacity: 0.55;
+  transform: none;
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.95rem 2rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-bone) 86%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-bone) 18%, transparent);
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.btn-ghost:hover {
+  border-color: color-mix(in srgb, var(--color-bronze) 55%, transparent);
+  color: var(--color-bronze-bright);
+}
+
+.rise {
+  animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
